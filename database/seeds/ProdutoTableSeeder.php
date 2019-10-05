@@ -30,7 +30,7 @@ class ProdutoTableSeeder extends Seeder
             'nome' => 'Suporte Metalico Tablet Bemacash 9.6 Pol',
             'modelo' => 'POL-499',
             'categoria' => 'hardware',
-            'valor' => 179.59
+            'valor' => 99.35
         ]);
 
         Produto::Create([
@@ -39,19 +39,19 @@ class ProdutoTableSeeder extends Seeder
             'categoria' => 'hardware',
             'valor' => 198.00
         ]);
-        
+
         Produto::Create([
             'nome' => 'MP-4200',
             'modelo' => 'TH ETHERNET BR 10080',
             'categoria' => 'hardware',
             'valor' => 698.80
-        ]);        
+        ]);
 
         Produto::Create([
             'nome' => 'Licenciamento Bemacash Vestuário',
             'modelo' => 'LSB-V',
             'categoria' => 'software',
             'valor' => 589.20
-        ]);                
+        ]);
     }
 }

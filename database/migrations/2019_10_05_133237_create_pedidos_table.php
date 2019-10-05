@@ -17,6 +17,7 @@ class CreatePedidosTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('status')->unsigned();
             $table->dateTime('data');
+            $table->double('total', 8, 2);
             $table->timestamps();
         });
     }
