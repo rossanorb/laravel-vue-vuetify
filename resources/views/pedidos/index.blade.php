@@ -61,7 +61,12 @@
                 <div class="col-xs-12">
                     <div class="table-responsive">
                         <h4>Informa&ccedil;&otilde;es</h4>
-                        <table class="table table-condensed">                        
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"></th>                                    
+                                </tr>
+                            </thead>
                             <tbody>
                             <tr>
                                 <td><label>John</label></td>
@@ -69,8 +74,7 @@
                             </tr>
                             <tr>
                                 <td><label>John</label></td>
-                                <td>Moe</td>
-                                
+                                <td>Moe</td>                                
                             </tr>
                             <tr>
                                 <td><label>John</label></td>
