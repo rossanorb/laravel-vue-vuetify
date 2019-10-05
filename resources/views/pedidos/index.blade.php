@@ -18,9 +18,10 @@
     <div class="col-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h4>Detalhes Do Pedido 897165867</h4>
+                <h4>Detalhes do Pedido 897165867</h4>
                 <div class="col-xs-12">
                     <div class="table-responsive">
+                        <h4>Itens do Pedido</h4>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -59,6 +60,7 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="table-responsive">
+                        <h4>Informa&ccedil;&otilde;es</h4>
                         <table class="table table-condensed">                        
                             <tbody>
                             <tr>
