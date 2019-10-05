@@ -13,7 +13,7 @@ class CreateHistoricosTable extends Migration
      */
     public function up()
     {
-        Schema::create('historicos', function (Blueprint $table) {
+        Schema::create('historico', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('status', 100);
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateHistoricosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historicos');
+        Schema::dropIfExists('historico');
     }
 }
