@@ -15,7 +15,20 @@ class ProdutosPedidosTableSeeder extends Seeder
         Pedido::Create([
             'status' => 1,
             'data' => '2019-09-27 15:05:10',
-            'total' => 575.59
+            'total' => 575.59,
+            'cnpj' => '48407784000101',
+            'estado' => 'São Paulo',
+            'cidade' => 'Campinas',
+            'pais' => 'Brasil',
+            'telefone' => '(19) 2668-8540',
+            'comentario' => '',
+            'bairro' => 'Vila Costa e Silva',
+            'cep' => '13081-470',
+            'endereco' => 'Rua dos Parecis',
+            'numero' => 764,
+            'executivo_vendas' => 'Marcelo',
+            'nfe' => '',
+            'nfe_data' => ''
         ]);
         Pedido::find(1)->produtos()->attach([
             1 => ['valor_unitario' => 179.59, 'quantidade' => 1],
@@ -25,7 +38,20 @@ class ProdutosPedidosTableSeeder extends Seeder
         Pedido::Create([
             'status' => 3,
             'data' => '2019-10-01 16:15:11',
-            'total' => 1176.44
+            'total' => 1176.44,
+            'cnpj' => '48407784000101',
+            'estado' => 'São Paulo',
+            'cidade' => 'Campinas',
+            'pais' => 'Brasil',
+            'telefone' => '(19) 2668-8540',
+            'comentario' => '',
+            'bairro' => 'Vila Costa e Silva',
+            'cep' => '13081-470',
+            'endereco' => 'Rua dos Parecis',
+            'numero' => 764,
+            'executivo_vendas' => 'Ana',
+            'nfe' => '',
+            'nfe_data' => ''
         ]);
         Pedido::find(2)->produtos()->attach([
             3 => ['valor_unitario' => 99.35,  'quantidade' => 3],
@@ -35,8 +61,21 @@ class ProdutosPedidosTableSeeder extends Seeder
 
         Pedido::Create([
             'status' => 5,
-            'data' => '2019-10-05 11:55:19',
-            'total' => 2899.99
+            'data' => '2019-08-15 11:55:19',
+            'total' => 2899.99,
+            'cnpj' => '48407784000101',
+            'estado' => 'São Paulo',
+            'cidade' => 'Campinas',
+            'pais' => 'Brasil',
+            'telefone' => '(19) 2668-8540',
+            'comentario' => '',
+            'bairro' => 'Vila Costa e Silva',
+            'cep' => '13081-470',
+            'endereco' => 'Rua dos Parecis',
+            'numero' => 764,
+            'executivo_vendas' => 'Marcelo',
+            'nfe' => '7975812515881',
+            'nfe_data' => '2019-10-04'
         ]);
         Pedido::find(3)->produtos()->attach([
             2 => ['valor_unitario' => 2899.99,  'quantidade' => 1]

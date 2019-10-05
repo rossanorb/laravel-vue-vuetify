@@ -6,7 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedido extends Model
 {
-    protected $fillable = ['status', 'data'];
+    protected $fillable = [
+        'status',
+        'data',
+        'total',
+        'cnpj',
+        'estado',
+        'cidade',
+        'pais',
+        'telefone',
+        'comentario',
+        'bairro',
+        'cep',
+        'endereco',
+        'numero',
+        'executivo_vendas',
+        'nfe',
+        'nfe_data'
+    ];
 
     public function produtos()
     {
