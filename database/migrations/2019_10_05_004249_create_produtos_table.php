@@ -18,7 +18,7 @@ class CreateProdutosTable extends Migration
             $table->string('nome', 50);
             $table->string('modelo', 20)->unique();
             $table->enum('categoria', ['software', 'hardware']);
-            $table->double('valor', 8, 2);            
+            $table->double('valor', 8, 2);
             $table->timestamps();
         });
     }
