@@ -15,7 +15,7 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('status')->unsigned();
+            $table->integer('status_id')->unsigned();
             $table->dateTime('data')->nullable();
             $table->double('total', 8, 2);
             $table->integer('cnpj')->unsigned();

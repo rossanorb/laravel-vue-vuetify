@@ -30,4 +30,9 @@ class Pedido extends Model
         return $this->belongsToMany(Produto::class, 'produtos_pedidos', 'pedidos_id', 'produtos_id')
             ->withPivot(['quantidade', 'valor_unitario']);
     }
+
+    public function historico()
+    {
+        return $this->belongsTo(Historico::class, 'status_id');
+    }
 }

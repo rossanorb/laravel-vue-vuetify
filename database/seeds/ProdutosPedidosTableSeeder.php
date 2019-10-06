@@ -13,7 +13,7 @@ class ProdutosPedidosTableSeeder extends Seeder
     public function run()
     {
         Pedido::Create([
-            'status' => 1,
+            'status_id' => 1,
             'data' => '2019-09-27 15:05:10',
             'total' => 575.59,
             'cnpj' => '48407784000101',
@@ -36,7 +36,7 @@ class ProdutosPedidosTableSeeder extends Seeder
         ]);
 
         Pedido::Create([
-            'status' => 3,
+            'status_id' => 3,
             'data' => '2019-10-01 16:15:11',
             'total' => 1176.44,
             'cnpj' => '48407784000101',
@@ -60,7 +60,7 @@ class ProdutosPedidosTableSeeder extends Seeder
         ]);
 
         Pedido::Create([
-            'status' => 5,
+            'status_id' => 5,
             'data' => '2019-08-15 11:55:19',
             'total' => 2899.99,
             'cnpj' => '48407784000101',

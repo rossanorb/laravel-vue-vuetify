@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 
 class PedidosService
 {
-    private $response = [
+    private $pedidos = [
         'status' => false,
-        'info' => [],
-        'itens' => []
+        'itens' => [],
+    ];
+
+    private $detalhes = [
+        'status' => false,
+        'info' => []
     ];
 
     public function find(int $id): array
@@ -18,12 +22,12 @@ class PedidosService
         $pedido = Pedido::find($id);
 
         if ($pedido instanceof Pedido) {
-            $this->response['status'] = true;
-            $this->response['info'] = $pedido;
-            $this->response['itens'] = $pedido->produtos()->get();
+            $this->pedidos['status'] = true;
+            $this->pedidos['info'] = $pedido;
+            $this->pedidos['info']['status'] = $pedido->historico()->first()->status;
         }
 
-        return $this->response;
+        return $this->pedidos;
     }
 
     public function findByDate(Request $request): array
@@ -33,5 +37,13 @@ class PedidosService
         }
 
         return ['data_inicial' => true];
+    }
+
+    public function details($id)
+    {
+        $pedido = Pedido::find($id);
+        $this->detalhes['itens'] = $pedido->produtos()->get();
+
+        return $this->detalhes;
     }
 }
