@@ -33,6 +33,7 @@ $(document).ready(function () {
             $('#numero_pedido').text('Detalhes do Pedido #' + data.info.id);
             $('.panel.detalhes_pedido').css('display', 'block');
             $('table.intens tbody tr').remove();
+            $('table.info tbody tr').remove();
 
             if (data.status) {
                 $(data.itens).each(function (idx, el) {
@@ -45,6 +46,26 @@ $(document).ready(function () {
                         '</tr>'
                     );
                 });
+
+
+                $('table.info tbody').append(
+                    '<tr><td>Status</td><td>' + data.info.status + '</td></tr>' +
+                    '<tr><td>Valor Total</td><td>' + data.info.total + '</td></tr>' +
+                    '<tr><td>Data Criação</td><td>' + data.info.created_at + '</td></tr>' +
+                    '<tr><td>CNPJ</td><td>' + data.info.cnpj + '</td></tr>' +
+                    '<tr><td>Telefone</td><td>' + data.info.telefone + '</td></tr>' +
+                    '<tr><td>Pais</td><td>' + data.info.pais + '</td></tr>' +
+                    '<tr><td>Estado</td><td>' + data.info.estado + '</td></tr>' +
+                    '<tr><td>Cidade</td><td>' + data.info.cidade + '</td></tr>' +
+                    '<tr><td>Bairro</td><td>' + data.info.bairro + '</td></tr>' +
+                    '<tr><td>Endereço Envio</td><td>' + data.info.endereco + '</td></tr>' +
+                    '<tr><td>Executivo de Vendas</td><td>' + data.info.executivo_vendas + '</td></tr>' +
+                    '<tr><td>Comentário do pedido</td><td>' + data.info.comentario + '</td></tr>' +
+                    '<tr><td>Nfe</td><td>' + data.info.nfe + '</td></tr>' +
+                    '<tr><td>Data Emissão Nfe</td><td>' + data.info.nfe_data + '</td></tr>'
+                );
+
+
             }
 
         });

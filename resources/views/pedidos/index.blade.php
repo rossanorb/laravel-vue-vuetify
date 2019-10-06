@@ -32,7 +32,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <h4>Pedidos</h4>
-                <table class="table table-hover pedidos">
+                <table class="table table-condensed table-hover pedidos">
                     <thead>
                         <tr>
                             <th>Número</th>
@@ -41,7 +41,7 @@
                             <th>Detalhes</th>
                         </tr>
                     </thead>
-                    <tbody>                        
+                    <tbody>
                     </tbody>
                 </table>
             </div>
@@ -64,7 +64,7 @@
                                     <th>Valor Unitario</th>
                                 </tr>
                             </thead>
-                            <tbody>                               
+                            <tbody>
                             </tbody>
                         </table>
                     </div>
@@ -79,18 +79,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><label>John</label></td>
-                                    <td>Doe</td>
-                                </tr>
-                                <tr>
-                                    <td><label>John</label></td>
-                                    <td>Moe</td>
-                                </tr>
-                                <tr>
-                                    <td><label>John</label></td>
-                                    <td>Dooley</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>

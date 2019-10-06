@@ -7,3 +7,7 @@ table.pedidos i {
 .panel.detalhes_pedido {
     display: none;
 }
+
+table.info tr td:last-child {
+    text-align: right;
+}
