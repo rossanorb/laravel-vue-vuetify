@@ -35,6 +35,11 @@ class ProdutosPedidosTableSeeder extends Seeder
             4 => ['valor_unitario' => 198.00, 'quantidade' => 2]
         ]);
 
+        Pedido::find(1)->update([
+            'created_at' => '2019-09-25 11:00:10',
+            'updated_at' => '2019-09-25 11:00:10'
+        ]);
+
         Pedido::Create([
             'status_id' => 3,
             'data' => '2019-10-01 16:15:11',
@@ -58,6 +63,10 @@ class ProdutosPedidosTableSeeder extends Seeder
             5 => ['valor_unitario' => 698.80, 'quantidade' => 1],
             1 => ['valor_unitario' => 179.59, 'quantidade' => 1],
         ]);
+        Pedido::find(2)->update([
+            'created_at' => '2019-09-29 15:15:11',
+            'updated_at' => '2019-09-29 15:15:11',
+        ]);
 
         Pedido::Create([
             'status_id' => 5,
@@ -79,6 +88,10 @@ class ProdutosPedidosTableSeeder extends Seeder
         ]);
         Pedido::find(3)->produtos()->attach([
             2 => ['valor_unitario' => 2899.99,  'quantidade' => 1]
+        ]);
+        Pedido::find(3)->update([
+            'created_at' => '2019-08-10 18:05:10',
+            'updated_at' => '2019-08-10 18:05:10',
         ]);
     }
 }

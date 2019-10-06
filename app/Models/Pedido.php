@@ -22,7 +22,9 @@ class Pedido extends Model
         'numero',
         'executivo_vendas',
         'nfe',
-        'nfe_data'
+        'nfe_data',
+        'created_at',
+        'updated_at'
     ];
 
     public function produtos()
