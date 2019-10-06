@@ -12,3 +12,4 @@
 */
 
 Route::get('/')->name('pedidos.index')->uses('PedidosController@index');
+Route::get('/pedidos/{id}')->name('pedidos.show')->uses('PedidosController@show')->where('id', '[0-9]+');
