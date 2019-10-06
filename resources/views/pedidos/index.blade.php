@@ -1,15 +1,18 @@
 @component('layouts.default')
+@push('scripts')
+    <script src="./js/pedidos.js"></script>
+@endpush
 <div class="row">
     <div class="col-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
                 <p>Utilize o campo de busca abaixo informando o número do pedido.</p>
-                <form class="form-inline" action="/action_page.php">
+                <form class="form-inline" action="{{route('pedidos.show','pedido_id')}}">
                     <div class="form-group">
                         <label for="search">N&uacute;mero Pedido:</label>
                         <input type="text" class="form-control" id="search">
                     </div>
-                    <button type="button" class="btn btn-primary">Busca</button>
+                    <button type="button" id="numero-pedido" class="btn btn-primary">Busca</button>
                 </form>
             </div>
         </div>
