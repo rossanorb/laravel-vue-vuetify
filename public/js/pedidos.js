@@ -4,6 +4,7 @@ $(document).ready(function () {
 
         $('.panel.detalhes_pedido').css('display', 'none');
         $('table.pedidos tbody tr').remove();
+        $('#data_inicial').css('border-color', '');
 
         var pedido_id = $('#search').val();
         var data_inicial = $('#data_inicial').val();
@@ -44,12 +45,9 @@ $(document).ready(function () {
                             );
                         });
                     }
-
-
-
-
-
                 }
+            }).fail(function () {
+                $('#data_inicial').css('border-color', 'red');
             });
         }
     });

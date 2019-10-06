@@ -16,12 +16,12 @@
     <div class="col-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                <p>Utilize o campo de busca abaixo informando o número do pedido.</p>
+                <p>Utilize o campo de busca abaixo informando o número do pedido ou a partir da data informada.</p>
                 <form class="form-inline" action="{{route('pedidos.show','pedido_id')}}">
 
                     <div class="form-group">
-                        <label for="data_inicial">Data Inicial:</label>
-                        <input type="text" class="form-control" id="data_inicial">                        
+                        <label for="data_inicial" title="Exibir pedidos a partir desta data">A partir de:</label>
+                        <input type="text" title="Exibir pedidos a partir desta data" class="form-control" id="data_inicial">                        
                     </div>
 
                     <div class="form-group">

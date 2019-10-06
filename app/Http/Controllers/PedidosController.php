@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Services\PedidosService;
 use Response;
+use App\Http\Requests\PedidosRequest;
 
 class PedidosController extends Controller
 {
@@ -56,7 +57,7 @@ class PedidosController extends Controller
         return Response::json($this->pedidoService->find($id), 200);
     }
 
-    public function searchByDate(Request $request)
+    public function searchByDate(PedidosRequest $request)
     {
         return Response::json($this->pedidoService->findByDate($request), 200);
     }
