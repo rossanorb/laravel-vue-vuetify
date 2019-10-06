@@ -14,6 +14,7 @@ class PedidosService
 
     private $detalhes = [
         'status' => false,
+        'info' => [],
         'detalhes' => []
     ];
 
@@ -39,9 +40,11 @@ class PedidosService
         return ['data_inicial' => true];
     }
 
-    public function details($id)
+    public function details(int $id): array
     {
         $pedido = Pedido::find($id);
+        $this->pedidos['info'] = $pedido;
+        $this->pedidos['info']['status'] = $pedido->historico()->first()->status;
         $this->detalhes['itens'] = $pedido->produtos()->get();
 
         return $this->detalhes;

@@ -61,7 +61,9 @@ class PedidosController extends Controller
     }
 
     public function details($id)
-    { }
+    {
+        return Response::json($this->pedidoService->details($id), 200);
+    }
 
     /**
      * Show the form for editing the specified resource.
