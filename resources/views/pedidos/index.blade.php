@@ -1,7 +1,17 @@
 @component('layouts.default')
+
 @push('scripts')
-<script src="./js/pedidos.js"></script>
+<script src="{{asset('js/pedidos.js') }}"></script>
 @endpush
+
+@push('styles')
+<link href="{{ asset('css/pedidos.css') }}" rel="stylesheet">
+@endpush
+
+<script>
+    var base_pedidos_base_url = "{{route('pedidos.detalhes', 'pedido_id')}}";
+</script>
+
 <div class="row">
     <div class="col-xs-12">
         <div class="panel panel-default">
@@ -28,16 +38,10 @@
                             <th>Número</th>
                             <th>Status</th>
                             <th>Data Atualização</th>
-                            <th>Ver Detalhes</th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>2</td>
-                            <td>2</td>
-                        </tr>
+                    <tbody>                        
                     </tbody>
                 </table>
             </div>
