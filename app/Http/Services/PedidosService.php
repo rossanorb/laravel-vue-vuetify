@@ -4,6 +4,7 @@ namespace App\Http\Services;
 
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PedidosService
 {
@@ -20,12 +21,11 @@ class PedidosService
 
     public function find(int $id): array
     {
-        $pedido = Pedido::find($id);
+        $pedido = Pedido::with('historico')->get()->find($id);
 
         if ($pedido instanceof Pedido) {
             $this->pedidos['status'] = true;
-            $this->pedidos['info'] = $pedido;
-            $this->pedidos['info']['status'] = $pedido->historico()->first()->status;
+            $this->pedidos['info'][] = $pedido;
         }
 
         return $this->pedidos;
@@ -33,11 +33,15 @@ class PedidosService
 
     public function findByDate(Request $request): array
     {
-        if ($request->get('data_final')) {
-            return ['data_inicial & data_final' => true];
+        $date = Carbon::createFromFormat('d/m/Y', $request->get('data_inicial'));
+        $pedidos = Pedido::whereDate('created_at', '>=', $date->toDateString())->with('historico')->get();
+
+        foreach ($pedidos as $k => $pedido) {
+            $this->pedidos['status'] = true;
+            $this->pedidos['info'][] = $pedido;
         }
 
-        return ['data_inicial' => true];
+        return $this->pedidos;
     }
 
     public function details(int $id): array

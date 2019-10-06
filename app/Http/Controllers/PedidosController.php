@@ -51,13 +51,14 @@ class PedidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id, Request $request)
+    public function show(int $id)
     {
-        if ($request->get('data_inicial')) {
-            return Response::json($this->pedidoService->findByDate($request), 200);
-        }
-
         return Response::json($this->pedidoService->find($id), 200);
+    }
+
+    public function searchByDate(Request $request)
+    {
+        return Response::json($this->pedidoService->findByDate($request), 200);
     }
 
     public function details($id)

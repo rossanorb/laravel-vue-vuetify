@@ -18,10 +18,17 @@
             <div class="panel-body">
                 <p>Utilize o campo de busca abaixo informando o número do pedido.</p>
                 <form class="form-inline" action="{{route('pedidos.show','pedido_id')}}">
+
+                    <div class="form-group">
+                        <label for="data_inicial">Data Inicial:</label>
+                        <input type="text" class="form-control" id="data_inicial">                        
+                    </div>
+
                     <div class="form-group">
                         <label for="search">N&uacute;mero Pedido:</label>
                         <input type="text" class="form-control" id="search">
-                    </div>
+                    </div>                    
+
                     <button type="button" id="numero-pedido" class="btn btn-primary">Busca</button>
                 </form>
             </div>

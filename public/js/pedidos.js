@@ -1,25 +1,54 @@
 $(document).ready(function () {
 
     $('#numero-pedido').on('click', function () {
+
+        $('.panel.detalhes_pedido').css('display', 'none');
+        $('table.pedidos tbody tr').remove();
+
         var pedido_id = $('#search').val();
-        if (pedido_id.length > 0) {
+        var data_inicial = $('#data_inicial').val();
+
+        if (pedido_id) {
             var url = $(this).parent().attr('action').replace('pedido_id', pedido_id);
+        } else if (data_inicial) {
+            var url = $(this).parent().attr('action').replace('/pedido_id', '?data_inicial=' + data_inicial);
+        }
 
-            $('.panel.detalhes_pedido').css('display', 'none');
-            $('table.pedidos tbody tr').remove();
-
+        if (pedido_id || data_inicial) {
             $.get(url, function (data) {
                 if (data.status) {
-                    $(data).each(function (idx, el) {
-                        $('table.pedidos tbody').append(
-                            '<tr>' +
-                            '<td>' + el.info.id + '</td>' +
-                            '<td>' + el.info.status + '</td>' +
-                            '<td>' + el.info.data + '</td>' +
-                            '<td><i id="' + el.info.id + '" class="fa fa-exclamation-circle detalhes_pedido" title="ver detalhes"></i></td>' +
-                            '</tr>'
-                        );
-                    });
+
+                    if (typeof data.info.id === typeof undefined) {
+
+                        $(data.info).each(function (idx, el) {
+                            $('table.pedidos tbody').append(
+                                '<tr>' +
+                                '<td>' + el.id + '</td>' +
+                                '<td>' + el.historico.status + '</td>' +
+                                '<td>' + el.data + '</td>' +
+                                '<td><i id="' + el.id + '" class="fa fa-exclamation-circle detalhes_pedido" title="ver detalhes"></i></td>' +
+                                '</tr>'
+                            );
+                        });
+
+                    } else {
+                        $(data.info).each(function (idx, el) {
+                            console.log('loop');
+                            $('table.pedidos tbody').append(
+                                '<tr>' +
+                                '<td>' + el.id + '</td>' +
+                                '<td>' + el.historico.status + '</td>' +
+                                '<td>' + el.data + '</td>' +
+                                '<td><i id="' + el.id + '" class="fa fa-exclamation-circle detalhes_pedido" title="ver detalhes"></i></td>' +
+                                '</tr>'
+                            );
+                        });
+                    }
+
+
+
+
+
                 }
             });
         }
