@@ -9,12 +9,12 @@ class PedidosService
 {
     private $pedidos = [
         'status' => false,
-        'itens' => [],
+        'info' => [],
     ];
 
     private $detalhes = [
         'status' => false,
-        'info' => []
+        'detalhes' => []
     ];
 
     public function find(int $id): array
