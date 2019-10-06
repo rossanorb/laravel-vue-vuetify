@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Services\PedidosService;
+use Response;
 
 class PedidosController extends Controller
 {
@@ -53,10 +54,10 @@ class PedidosController extends Controller
     public function show(int $id, Request $request)
     {
         if ($request->get('data_inicial')) {
-            return $this->pedidoService->findByDate($request);
+            return Response::json($this->pedidoService->findByDate($request), 200);
         }
 
-        return $this->pedidoService->find($id);
+        return Response::json($this->pedidoService->find($id), 200);
     }
 
     /**

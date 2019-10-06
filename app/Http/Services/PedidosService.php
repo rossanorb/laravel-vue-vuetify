@@ -2,18 +2,27 @@
 
 namespace App\Http\Services;
 
+use App\Models\Pedido;
 use Illuminate\Http\Request;
 
 class PedidosService
 {
     private $response = [
         'status' => false,
-        'itens' => [],
-        'info' => []
+        'info' => [],
+        'itens' => []
     ];
 
     public function find(int $id): array
     {
+        $pedido = Pedido::find($id);
+
+        if ($pedido instanceof Pedido) {
+            $this->response['status'] = true;
+            $this->response['info'] = $pedido;
+            $this->response['itens'] = $pedido->produtos()->get();
+        }
+
         return $this->response;
     }
 
