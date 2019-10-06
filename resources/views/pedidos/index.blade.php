@@ -38,7 +38,7 @@
                             <th>Número</th>
                             <th>Status</th>
                             <th>Data Atualização</th>
-                            <th></th>
+                            <th>Detalhes</th>
                         </tr>
                     </thead>
                     <tbody>                        
@@ -49,44 +49,22 @@
     </div>
 
     <div class="col-xs-12">
-        <div class="panel panel-default">
+        <div class="panel panel-default detalhes_pedido">
             <div class="panel-body">
-                <h4>Detalhes do Pedido 897165867</h4>
+                <h4 id="numero_pedido"></h4>
                 <div class="col-xs-12">
                     <div class="table-responsive">
                         <h4>Itens do Pedido</h4>
-                        <table class="table table-hover detalhes">
+                        <table class="table table-hover intens">
                             <thead>
                                 <tr>
                                     <th>Item</th>
                                     <th>Modelo</th>
                                     <th>Quantidade</th>
                                     <th>Valor Unitario</th>
-                                    <th>ver datlhes</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
-                                    <td>2</td>
-                                    <td>100,00</td>
-                                    <td>icon</td>
-                                </tr>
-                                <tr>
-                                    <td>Mary</td>
-                                    <td>Moe</td>
-                                    <td>2</td>
-                                    <td>100,00</td>
-                                    <td>icon</td>
-                                </tr>
-                                <tr>
-                                    <td>July</td>
-                                    <td>Dooley</td>
-                                    <td>2</td>
-                                    <td>100,00</td>
-                                    <td>icon</td>
-                                </tr>
+                            <tbody>                               
                             </tbody>
                         </table>
                     </div>

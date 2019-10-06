@@ -3,3 +3,7 @@ table.pedidos i {
     color: #2e6da4;
     cursor: pointer;
 }
+
+.panel.detalhes_pedido {
+    display: none;
+}

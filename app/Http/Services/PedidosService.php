@@ -43,9 +43,12 @@ class PedidosService
     public function details(int $id): array
     {
         $pedido = Pedido::find($id);
-        $this->pedidos['info'] = $pedido;
-        $this->pedidos['info']['status'] = $pedido->historico()->first()->status;
-        $this->detalhes['itens'] = $pedido->produtos()->get();
+        if ($pedido instanceof Pedido) {
+            $this->detalhes['status'] = true;
+            $this->detalhes['info'] = $pedido;
+            $this->detalhes['info']['status'] = $pedido->historico()->first()->status;
+            $this->detalhes['itens'] = $pedido->produtos()->get();
+        }
 
         return $this->detalhes;
     }
