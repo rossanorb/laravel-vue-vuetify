@@ -30,6 +30,12 @@ class PedidoTest extends TestCase
             'status' => false,
             'info' => []
         ]);
+
+        $response = $this->get('/pedidos?data_inicial=31/12/2020');
+        $response->assertStatus(200)->assertJson([
+            'status' => false,
+            'info' => []
+        ]);
     }
 
     public function testBuscaPorData()
