@@ -1,3 +1,20 @@
+<h3>Instruções: </h3>
+
+<p> Na raíz do projeto rodar o comando : composer install</p>
+
+<p> Se necessário verificar permissões nas pastas [ ./storage, ./bootstrap, ./public ] </p>
+<p> rodar servidor embutido do Laravel. Na raiz do projeto executar : php artisan serve </p>
+<p> Acessar endereço e porta informado, exemplo http://127.0.0.1:8000 </p>
+
+<p> Rodar Testes Unitários usando versão local: </p>
+<p> Na raiz do projeto executar: ./vendor/bin/phpunit --debug --verbose --color </p>
+
+<p>Se necessário, para dropar tabelas e popular banco novamente, rodar na raiz do projeto: </p>
+<p> php artisan migrate:refresh --seed </p>
+
+<p> Banco local Sqlite3 </p>
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
