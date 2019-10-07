@@ -23,6 +23,15 @@ class PedidoTest extends TestCase
         $response->assertStatus(200)->assertJson($data);
     }
 
+    public function testBuscaNumeroPedidoInexistente()
+    {
+        $response = $this->get('/pedidos/123456789');
+        $response->assertStatus(200)->assertJson([
+            'status' => false,
+            'info' => []
+        ]);
+    }
+
     public function testBuscaPorData()
     {
         $pedidos = Pedido::whereDate('created_at', '>=', '2019-09-20')->with('historico')->get()->toArray();
