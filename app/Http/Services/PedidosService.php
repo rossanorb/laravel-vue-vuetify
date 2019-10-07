@@ -15,8 +15,7 @@ class PedidosService
 
     private $detalhes = [
         'status' => false,
-        'info' => [],
-        'detalhes' => []
+        'info' => []
     ];
 
     public function find(int $id): array
