@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Historico extends Model
 {
-    protected $table = 'historico';    
+    protected $table = 'historico';
     protected $fillable = ['status'];
 }

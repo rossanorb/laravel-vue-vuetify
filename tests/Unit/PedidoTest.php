@@ -50,7 +50,11 @@ class PedidoTest extends TestCase
         $pedido = Pedido::find(3);
         $data['status'] = true;
         $data['info']['status'] = $pedido->historico()->first()->status;
-        $data['itens'] = $pedido->produtos()->get()->toArray();
+        //$data['itens'] = $pedido->produtos()->get()->toArray();
+        $p = $pedido->produtos()->get();
+        $p->first()->pivot->valor_unitario = number_format($p->first()->pivot->valor_unitario, 2, ",", ".");;
+        $this->detalhes['itens'] = $p;
+
         $data['info'] = $pedido->toArray();
         $response  = $this->get('/pedidos/3/detalhes');
         $response->assertStatus(200)->assertJson($data);

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Pedido extends Model
 {
@@ -36,5 +37,25 @@ class Pedido extends Model
     public function historico()
     {
         return $this->belongsTo(Historico::class, 'status_id');
+    }
+
+    public function getDataAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y H:i:s');
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y H:i:s');
+    }
+
+    public function getTotalAttribute($value)
+    {
+        return number_format($value, 2, ",", ".");
+    }
+
+    public function getValorUnitarioAttribute($value)
+    {
+        return number_format($value, 2, ",", ".");
     }
 }

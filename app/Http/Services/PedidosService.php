@@ -50,7 +50,9 @@ class PedidosService
             $this->detalhes['status'] = true;
             $this->detalhes['info'] = $pedido;
             $this->detalhes['info']['status'] = $pedido->historico()->first()->status;
-            $this->detalhes['itens'] = $pedido->produtos()->get();
+            $p = $pedido->produtos()->get();
+            $p->first()->pivot->valor_unitario = number_format($p->first()->pivot->valor_unitario, 2, ",", ".");
+            $this->detalhes['itens'] = $p;
         }
 
         return $this->detalhes;
