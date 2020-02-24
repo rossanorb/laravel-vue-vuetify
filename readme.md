@@ -13,7 +13,7 @@
 
 <p> Banco local Sqlite3 </p>
 
-<p>usuario: admin@admin</p>
+<p>usuario: admin@admin.com</p>
 <p>senha: 102030</p>
 
 <p>Na pasta app rodar o comando : npm install </p>
