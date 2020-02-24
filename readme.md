@@ -1,10 +1,9 @@
 <h3>Instruções: </h3>
 
-<p> Na raíz do projeto rodar o comando : composer install</p>
+<p> Na pasta server rodar o comando : composer install</p>
 
 <p> Se necessário verificar permissões nas pastas [ ./storage, ./bootstrap, ./public ] </p>
-<p> rodar servidor embutido do Laravel. Na raiz do projeto executar : php artisan serve </p>
-<p> Acessar endereço e porta informado, exemplo http://127.0.0.1:8000 </p>
+<p> rodar servidor embutido do Laravel. nas pasta server : php artisan serve </p>
 
 <p> Rodar Testes Unitários usando versão local: </p>
 <p> Na raiz do projeto executar: ./vendor/bin/phpunit --debug --verbose --color </p>
@@ -16,6 +15,9 @@
 
 <p>usuario: admin@admin</p>
 <p>senha: 102030</p>
+
+<p>Na pasta app rodar o comando : npm install </p>
+<p>Para rodar servidor Vue, dentro da pasta app rode: npm run serve</p>
 
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
