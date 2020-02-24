@@ -14,6 +14,9 @@
 
 <p> Banco local Sqlite3 </p>
 
+<p>usuario: admin@admin</p>
+<p>senha: 102030</p>
+
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
