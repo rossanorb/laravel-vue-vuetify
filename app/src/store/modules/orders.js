@@ -12,7 +12,7 @@ const getters = {
 }
 
 const actions = {
-    find( { commit, dispatch, state  }, search ) {
+    find( { commit, dispatch }, search ) {
         dispatch('dashboard/setShowDetails', false, { root: true });
         if(search.id){
             order.find(search.id)
@@ -22,19 +22,19 @@ const actions = {
         }
         else if(search.date){
             order.findByDate(search.date)
-            .then( (orders) => {                
+            .then( (orders) => {
                 if(orders.status){
                     commit('setOrders', orders.result)
-                }                
+                }
             });
-        }        
+        }
     },
 
-    getDetails({ commit, dispatch, state}, id) {
+    getDetails({ commit, dispatch }, id) {
         dispatch('dashboard/setShowDetails', true, { root: true });
         if(id){
-            order.getDetails(id)            
-            .then( details => {                        
+            order.getDetails(id)
+            .then( details => {
                 commit('setDetails', details.result)
             });
         }
