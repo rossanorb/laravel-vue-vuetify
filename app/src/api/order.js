@@ -55,14 +55,14 @@ export default {
                     error: err.message,
                     description: err.response.statusText
                 }
-            });            
+            });
 
-        } catch (error) {            
+        } catch (error) {
             return {
                 status: false,
                 error: error,
                 description: error.response.statusText
-            }            
+            }
         }
     },
 
@@ -86,7 +86,7 @@ export default {
                     error: err.message,
                     description: err.response.data.message
                 }
-            });           
+            });
 
         } catch (error) {
             return {
