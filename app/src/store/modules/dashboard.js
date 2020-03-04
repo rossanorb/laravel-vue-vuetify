@@ -2,15 +2,15 @@
 // initial state
 const state = {
     dateFormatted: '',
-    showDetails: false,    
+    showDetails: false,
 }
 
 // getters
 const getters = {
-    showDetails: (state, getters, rootState) => {
+    showDetails: (state) => {
         return state.showDetails;
     }
-    
+
 }
 
 // mutations
@@ -47,4 +47,3 @@ export default {
     actions,
     mutations
 }
- 
