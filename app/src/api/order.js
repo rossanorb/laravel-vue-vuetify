@@ -1,12 +1,13 @@
 import axios from 'axios'
 const cookies = require('vue-cookies');
 const apiBaseUrl =  'http://localhost:8000/api';
+//import store from '@/store';
 
 export default {
     findAll() {},
 
     async find(id) {
-
+        //store.commit('dashboard/setLoading');
         if(isNaN(parseInt(id))) return false;
 
         try {

@@ -7,6 +7,13 @@ import passport from './plugins/passport'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import './components';
+
+// import Navbar from '@/components/partials/Navbar'
+// Vue.component('Navbar', Navbar)
+
+
+
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 Vue.use(passport);

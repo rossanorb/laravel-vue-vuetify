@@ -1,18 +1,17 @@
 <template>
 <v-app class="grey lighten-4">
-    <Navbar />
-
     <v-content>
+        <Navbar />
         <div class="dashboard">
             <!-- <v-container>
-          
+
           <v-row style="background: blue;">
             <v-col cols="12" sm="6" md="4" lg="3" class="green">col 1</v-col>
             <v-col cols="12" sm="6" md="4" lg="3" class="orange">col 2</v-col>
             <v-col cols="12" sm="6" md="4" lg="3" class="blue">col 3</v-col>
             <v-col cols="12" sm="6" md="4" lg="3" class="yellow">col 4</v-col>
           </v-row>
-          
+
         </v-container> -->
 
             <v-container fluid>
@@ -23,18 +22,18 @@
                                 <v-col cols="8" id="search" class="table-border">
                                     <v-row>
                                         <v-col cols="12">
-                                            <p>Utilize o campo de busca abaixo informando o número do pedido our a partir da data informada.</p>                                            
+                                            <p>Utilize o campo de busca abaixo informando o número do pedido our a partir da data informada.</p>
                                         </v-col>
                                     </v-row>
                                     <v-row :align="alignment" :justify="justify">
                                         <v-col cols="4">
                                             <v-text-field v-model="pedido" @focus="pedido=null" label="Número do pedido:"></v-text-field>
-                                        </v-col>                                        
+                                        </v-col>
                                         <v-col cols="4">
                                             <v-menu ref="menu" v-model="menu" :close-on-content-click="false" transition="scale-transition" offset-y min-width="290px">
                                                 <template v-slot:activator="{ on }">
                                                     <v-text-field v-model="dateFormatted" label="A partir da data:" prepend-icon="event" readonly
-                                                        :disabled=" pedido ? '' : disabled " 
+                                                        :disabled=" pedido ? '' : disabled "
                                                         v-on="on"
                                                     ></v-text-field>
                                                 </template>
@@ -79,11 +78,11 @@
                                                             <th class="text-center">Detalhes</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>                                                        
+                                                    <tbody>
                                                         <tr v-for="order in orders" :key="order.id">
                                                             <td width="30%">{{order.id}}</td>
                                                             <td width="30%">{{order.historico.status}}</td>
-                                                            <td width="30%">{{order.data | formatDateTime}}</td>                                                            
+                                                            <td width="30%">{{order.data | formatDateTime}}</td>
                                                             <td class="text-center" width="10%" v-on:click="getDetails(order.id)" ><v-icon style="cursor:pointer" color="blue darken-3">info</v-icon></td>
                                                         </tr>
                                                     </tbody>
@@ -106,11 +105,11 @@
                                         <v-col cols="12">
                                             <p>Informações</p>
                                         </v-col>
-                                    </v-row>                                             
+                                    </v-row>
                                     <v-row>
                                         <v-col cols="12">
                                             <v-simple-table>
-                                                <template v-slot:default>                                                    
+                                                <template v-slot:default>
                                                     <tbody>
                                                         <tr><td>Status</td><td class="right">{{details.status}}</td></tr>
                                                         <tr><td>Valor Total</td><td class="right">{{details.total}}</td></tr>
@@ -147,13 +146,13 @@
 </template>
 
 <script>
-import Navbar from '@/components/partials/Navbar'
+//import Navbar from '@/components/partials/Navbar'
 import '@/utils/filter'
 import { mapState, mapGetters, mapActions} from 'vuex'
 
 export default {
     components: {
-        Navbar
+        //Navbar
     },
     props: ['disabled'],
     name: 'Dashboard',
@@ -164,7 +163,7 @@ export default {
             date: new Date().toISOString().substr(0, 10),
             menu: false,
             modal: false,
-            pedido: null            
+            pedido: null
         }
     },
 
@@ -184,7 +183,7 @@ export default {
 
     methods: {
         ...mapActions('dashboard', ['formatDate','setShowDetails']),
-        ...mapActions('orders', ['find', 'getDetails']),        
+        ...mapActions('orders', ['find', 'getDetails']),
     },
 
     created() {

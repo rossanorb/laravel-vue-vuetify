@@ -3,6 +3,7 @@
 const state = {
     dateFormatted: '',
     showDetails: false,
+    loading: 0
 }
 
 // getters
@@ -21,6 +22,10 @@ const mutations = {
 
     setShowDetails(state, status) {
         state.showDetails = status;
+    },
+
+    setLoading(state){
+        state.loading = 1;
     }
 
 }
